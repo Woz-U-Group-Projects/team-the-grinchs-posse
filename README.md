@@ -1,6 +1,6 @@
 # Final Group Project (Woz U)
 
-## Team: **The Grinch&apos;s Posse**
+## Team: **The Grinch&apos;s Posse** ammon is awesome
 
 ### Project Name: Untitled
 
