@@ -1,0 +1,12 @@
+<div *ngIf="member">
+  <h2>{{member.name | uppercase}}'s Wish List</h2>
+  <div><span>id: </span>{{member.id}}</div>
+  <div>
+    <label>name:
+      <input [(ngModel)]="member.name" placeholder="name">
+    </label>
+  </div>
+  <div><span>Gift #1: </span>{{member.giftName1}}</div>
+</div>
+<button (click)="goBack()">Go Back</button>
+<button (click)="save()">Save</button>

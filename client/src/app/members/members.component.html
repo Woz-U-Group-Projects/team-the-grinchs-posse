@@ -1,0 +1,21 @@
+<h2>Family Members</h2>
+
+<div>
+  <label>Family Member Name:
+    <input #memberName />
+  </label>
+  <!-- (click) passes input value to add() and then clears the input -->
+  <button (click)="add(memberName.value); memberName.value=''">
+    Add
+  </button>
+</div>
+
+<ul class="members">
+  <li *ngFor="let member of members">
+    <a routerLink="/detail/{{member.id}}">
+      <span class="badge">{{member.id}}</span> {{member.name}}
+    </a>
+    <button class="delete" title="delete member"
+      (click)="delete(member)">x</button>
+  </li>
+</ul>
