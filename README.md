@@ -2,7 +2,7 @@
 
 ## Team: The Grinch's Posse
 
-### Project Name: Untitled
+### Project Working Name: Gift Wish List
 
 This repository contains all development on the final Group Project.
 
