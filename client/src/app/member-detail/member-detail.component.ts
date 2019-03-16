@@ -21,7 +21,6 @@ export class MemberDetailComponent implements OnInit {
     private memberService: MemberService,
     private location: Location,
     
-    // Is this correct?
     
 
   ) { }

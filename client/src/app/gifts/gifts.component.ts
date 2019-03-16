@@ -12,13 +12,13 @@ export class GiftsComponent implements OnInit {
   constructor() { }
 
   ngOnInit() {
-    this.getGifts();
+  //  this.getGifts();
   }
-
-  // I need to create a giftService.
-  getGifts(): void {
-    this.giftService.getGifts()
-      .subscribe(gifts => this.gifts = gifts);
-  }
+  
+  // I need to create a giftService:
+  // getGifts(): void {
+  //   this.giftService.getGifts()
+  //     .subscribe(gifts => this.gifts = gifts);
+  // }
 
 }
