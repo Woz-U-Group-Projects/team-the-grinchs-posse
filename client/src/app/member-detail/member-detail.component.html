@@ -6,7 +6,13 @@
       <input [(ngModel)]="member.name" placeholder="name">
     </label>
   </div>
-  <div><span>Gift #1: </span>{{member.giftName1}}</div>
+
+  <!-- This pulled the gifts from the pseudo member data (from the in-memory-data.service component used for testing purposes). -->
+  <!-- <div><span>Gift #1: </span>{{member.giftName1}}</div> -->
+  
+  <!--This uses <app-gifts> to point to the gifts component. -->
+  <div><span>Gift #1: </span><app-gifts></app-gifts></div>
+
 </div>
 <button (click)="goBack()">Go Back</button>
 <button (click)="save()">Save</button>

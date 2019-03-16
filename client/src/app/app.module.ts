@@ -13,6 +13,7 @@ import { AppRoutingModule } from './app-routing.module';
 import { DashboardComponent } from './dashboard/dashboard.component';
 import { MemberSearchComponent } from './member-search/member-search.component';
 import { LoginComponent } from './login/login.component';
+import { GiftsComponent } from './gifts/gifts.component';
 
 @NgModule({
   declarations: [
@@ -22,7 +23,8 @@ import { LoginComponent } from './login/login.component';
     MessagesComponent,
     DashboardComponent,
     MemberSearchComponent,
-    LoginComponent
+    LoginComponent,
+    GiftsComponent
   ],
   imports: [
     BrowserModule,
