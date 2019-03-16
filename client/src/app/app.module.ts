@@ -14,6 +14,7 @@ import { DashboardComponent } from './dashboard/dashboard.component';
 import { MemberSearchComponent } from './member-search/member-search.component';
 import { LoginComponent } from './login/login.component';
 import { GiftsComponent } from './gifts/gifts.component';
+import { RegisterComponent } from './register/register.component';
 
 @NgModule({
   declarations: [
@@ -24,7 +25,8 @@ import { GiftsComponent } from './gifts/gifts.component';
     DashboardComponent,
     MemberSearchComponent,
     LoginComponent,
-    GiftsComponent
+    GiftsComponent,
+    RegisterComponent
   ],
   imports: [
     BrowserModule,
