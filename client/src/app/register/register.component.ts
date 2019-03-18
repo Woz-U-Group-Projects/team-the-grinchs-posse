@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Router, ActivatedRoute } from '@angular/router';
+import { Location } from '@angular/common';
 
 @Component({
   selector: 'app-register',
@@ -8,9 +9,16 @@ import { Router, ActivatedRoute } from '@angular/router';
 })
 export class RegisterComponent implements OnInit {
 
-  constructor() { }
+  constructor(
+    private route: ActivatedRoute,
+    private location: Location
+  ) { }
 
   ngOnInit() {
+  }
+
+  goBack(): void {
+    this.location.back();
   }
 
 }
