@@ -7,6 +7,10 @@ import { Router, ActivatedRoute } from '@angular/router';
   styleUrls: ['./login.component.css']
 })
 export class LoginComponent implements OnInit {
+
+  login() {
+    
+  }
   
   constructor() { }
 
