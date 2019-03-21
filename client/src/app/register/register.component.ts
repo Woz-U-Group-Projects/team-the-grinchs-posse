@@ -9,6 +9,10 @@ import { Location } from '@angular/common';
 })
 export class RegisterComponent implements OnInit {
 
+  register() {
+    
+  }
+
   constructor(
     private route: ActivatedRoute,
     private location: Location

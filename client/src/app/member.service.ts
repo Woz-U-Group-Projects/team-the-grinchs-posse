@@ -16,7 +16,11 @@ const httpOptions = {
 })
 export class MemberService {
 
-  private membersUrl = 'api/members';  // URL to web api
+  // this is the URL for the in-memory-data-service (web api: mock data for testing purposes ) and is now commented out in order to use the real URL:
+  // private membersUrl = 'api/members';
+  
+  // real URL:
+  private membersUrl: string = "http://localhost:3000/members";
 
   constructor(
     private http: HttpClient,
