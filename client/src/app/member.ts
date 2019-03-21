@@ -1,5 +1,7 @@
 export class Member {
     id: number;
     name: string;
-    giftName1: string;
+    
+    // no longer needed...was for testing purposes only:
+    // giftName1: string;
 }
