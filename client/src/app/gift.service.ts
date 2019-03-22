@@ -5,5 +5,7 @@ import { Injectable } from '@angular/core';
 })
 export class GiftService {
 
+  url: string = "http://localhost:3000/gift";
+
   constructor() { }
 }
