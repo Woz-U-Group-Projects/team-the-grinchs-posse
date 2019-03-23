@@ -12,7 +12,7 @@
 // Jane's code:
 var express = require('express');
 var router = express.Router();
-var users = require('../models/member');
+var users = require('../models');
 
 router.get('/members', function (req, res, next) {
   models.member.findAll({}).then(memberAsPlainObject => {
