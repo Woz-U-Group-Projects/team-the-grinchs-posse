@@ -14,13 +14,13 @@ var express = require('express');
 var router = express.Router();
 var users = require('../models/member');
 
-router.get('/artists', function (req, res, next) {
+router.get('/members', function (req, res, next) {
   models.member.findAll({}).then(memberAsPlainObject => {
     const mappedMember = memberAsPlainObject.map(member => ({
-      memberId: member.memberd,
+      memberId: member.memberId,
       Name: member.Name
     }));
-    res.send(JSON.stringify(mappedArtists));
+    res.send(JSON.stringify(mappedMembers));
   });
 });
 

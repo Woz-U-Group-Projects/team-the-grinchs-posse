@@ -20,7 +20,7 @@ const auth = require('../config/auth');
 router.get('/', function (req, res, next) {
   res.send('respond with a resource');
 });
-router.get("/signup", function (req, res, next) {
+router.get('/signup', function (req, res, next) {
   res.render('signup')
 });
 
@@ -53,29 +53,30 @@ router.get('/login', function (req, res, next) {
   res.render('login');
 });
 
-router.post('/login', function (req, res, next) {
-  models.users.findOne({
-    where: {
-      Username: req.body.username,
-      Password: req.body.password
-    }
-  }).then(user => {
-    console.log('login found a user')
-    if (!user) {
-      return res.status(401).json({
-        message: "Login Failed"
-      });
-    }
-    if (user) {
-      //Add code here
+// This code is redundant:
+// router.post('/login', function (req, res, next) {
+//   models.users.findOne({
+//     where: {
+//       Username: req.body.username,
+//       Password: req.body.password
+//     }
+//   }).then(user => {
+//     console.log('login found a user')
+//     if (!user) {
+//       return res.status(401).json({
+//         message: "Login Failed"
+//       });
+//     }
+//     if (user) {
+//       //Add code here
 
-    } else {
-      console.log(req.body.password);
-      res.redirect('login')
-    }
+//     } else {
+//       console.log(req.body.password);
+//       res.redirect('login')
+//     }
 
-  });
-});
+//   });
+// });
 
 router.get('/profile/:id', auth.verifyUser, function (req, res, next) {
   if (req.params.id !== String(req.user.UserId)) {
