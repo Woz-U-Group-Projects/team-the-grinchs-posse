@@ -4,9 +4,7 @@ import { Location } from '@angular/common';
 
 import { Member } from '../member';
 import { MemberService } from '../member.service';
-
-// I don't think this is the correct import. Do I need to create a GiftsService for this?
-import { GiftsComponent } from '../gifts/gifts.component';
+import { GiftService } from '../gift.service';
 
 @Component({
   selector: 'app-member-detail',
