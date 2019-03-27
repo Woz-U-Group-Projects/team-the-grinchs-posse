@@ -27,7 +27,7 @@ export class MemberService {
     private messageService: MessageService) { }
 
   getMembers(): Observable<Member[]> {
-    /** GET heroes from the server */
+    /** GET members from the server */
     return this.http.get<Member[]>(this.membersUrl)
       .pipe(
         tap(_ => this.log('fetched members')),

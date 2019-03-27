@@ -1,13 +1,15 @@
 import { Injectable } from '@angular/core';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Observable } from 'rxjs';
+import { catchError, map, tap } from 'rxjs/operators';
 
 @Injectable({
   providedIn: 'root'
 })
 export class RegisterService {
 
-  url: string = "http://localhost:3000/register";
+    constructor(private http: HttpClient) { }
 
-  constructor() { }
+    url: string = "http://localhost:3000/register";
+    
 }

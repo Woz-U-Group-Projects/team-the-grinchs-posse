@@ -6,15 +6,20 @@
 <br>
 <h1>Family Members</h1>
 <br>
-<div>
+
+<!-- The add feature below is likely something that should only be available for an admin user to manually add a name. And we may not even want it located here.-->
+
+<!-- <div>
   <label>Family Member Name:
     <input #memberName />
-  </label>
+  </label> -->
+  
   <!-- (click) passes input value to add() and then clears the input -->
-  <button (click)="add(memberName.value); memberName.value=''">
+
+  <!-- <button (click)="add(memberName.value); memberName.value=''">
     Add
   </button>
-</div>
+</div> -->
 
 <ul class="members">
   <li *ngFor="let member of members">
