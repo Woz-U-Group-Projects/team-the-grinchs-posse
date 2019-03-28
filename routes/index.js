@@ -2,7 +2,7 @@ var express = require('express');
 var router = express.Router();
 var users = require('../models/member');
 
- router.get('/artists', function(req, res, next) {
+ router.get('/member', function(req, res, next) {
       models.member.findAll({}).then(memberAsPlainObject => {
         const mappedMember = memberAsPlainObject.map(member => ({
           memberId: member.memberd,

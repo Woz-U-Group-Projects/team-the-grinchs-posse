@@ -1,7 +1,10 @@
 var express = require('express');
 var router = express.Router();
-var models = require('../models');
+var models = require('../models/user');
 const auth = require('../config/auth');
+const bcrypt = require('bcrypt');
+
+const userRoutes = require('/routes/users')
 
 
 /* GET users listing. */
@@ -13,6 +16,10 @@ router.get("/signup", function (req, res, next) {
 });
 
 router.post('/signup', function (req, res, next) {
+  bcrypt.hash(req.body.password, 8) 
+    .then(hash => {
+
+    })
   models.users.findOne({
     where: {
       Username: req.body.username
@@ -83,36 +90,6 @@ router.get('/profile/:id', auth.verifyUser, function (req, res, next) {
 module.exports = router;
 
 
-router.post('/signup', function (req, res, next) {
-  models.users.findOne({
-    where: {
-      Username: req.body.username
-    }
-  }).then(user => {
-    if (user) {
-      res.send('this user already exists')
-    } else {
-      models.users.create({
-        FirstName: req.body.firstName,
-        LastName: req.body.lastName,
-        Email: req.body.email,
-        Username: req.body.username,
-        Password: req.body.password
-      }).then(createdUser => {
-        if (createdUser) {
-          const userId = createdUser.UserId
-          const token = auth.signUser(createdUser);
-          res.cookie('jwt', token);
-          res.redirect('profile/' + userId)
-        } else {
-          console.error('not a match');
-        }
-
-      });
-    }
-  });
-
-});
 
 router.post('/signup', function(req, res, next) {
   const hashedPassword = auth.hashPassword(req.body.password);
@@ -120,6 +97,7 @@ router.post('/signup', function(req, res, next) {
     .findOne({
       where: {
         Username: req.body.username
+      
       }
     })
     .then(user => {
@@ -177,32 +155,7 @@ router.post('/login', function (req, res, next) {
   });
 });
 
-router.post('/login', function (req, res, next) {
-  const hashedPassword = auth.hashPassword(req.body.password);
-  models.users.findOne({
-    where: {
-      Username: req.body.username
-    }
-  }).then(user => {
-    const isMatch = user.comparePassword(req.body.password)
 
-    if (!user) {
-      return res.status(401).json({
-        message: "Login Failed"
-      });
-    }
-    if (isMatch) {
-      const userId = user.UserId
-      const token = auth.signUser(user);
-      res.cookie('jwt', token);
-      res.redirect('profile/' + userId)
-    } else {
-      console.log(req.body.password);
-      res.redirect('login')
-    }
-
-  });
-});
 
 router.get('/logout', function (req, res) {
   res.cookie('jwt', null);
@@ -223,5 +176,7 @@ users.prototype.comparePassword = function (plainTextPassword) {
 };
 
 return users;
+
+app.use('/api/user', userRoutes)
 
 module.exports = router;
