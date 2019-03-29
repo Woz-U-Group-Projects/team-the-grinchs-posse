@@ -21,4 +21,12 @@ app.use(express.static(path.join(__dirname, 'public')));
 app.use('/', indexRouter);
 app.use('/users', usersRouter);
 
+// Configure synchronization of database using Sequelize:
+
+models.sequelize.sync().then( function()  {
+
+    console.log('DB Synced up.');
+
+}); // end models.sequelize.sync().then()
+
 module.exports = app;
