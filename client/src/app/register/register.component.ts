@@ -23,8 +23,8 @@ export class RegisterComponent implements OnInit {
   ngOnInit() {
   }
 
-  goBack(): void {
-    this.location.back();
-  }
+  // goBack(): void {
+  //   this.location.back();
+  // }
 
 }
