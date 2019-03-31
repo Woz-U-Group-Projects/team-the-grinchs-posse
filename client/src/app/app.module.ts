@@ -15,6 +15,7 @@ import { MemberSearchComponent } from './member-search/member-search.component';
 import { LoginComponent } from './login/login.component';
 import { GiftsComponent } from './gifts/gifts.component';
 import { RegisterComponent } from './register/register.component';
+import { AlertComponent } from './alert/alert.component';
 
 @NgModule({
   declarations: [
@@ -26,7 +27,8 @@ import { RegisterComponent } from './register/register.component';
     MemberSearchComponent,
     LoginComponent,
     GiftsComponent,
-    RegisterComponent
+    RegisterComponent,
+    AlertComponent
   ],
   imports: [
     BrowserModule,
