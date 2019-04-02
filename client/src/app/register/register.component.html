@@ -2,24 +2,27 @@
 
 <div>
   <label>
-    <input type="text" name="firstName" placeholder="First Name">
+    <input type="text" [(ngModel)]="registerMember.firstName" name="firstName" placeholder="First Name">
   </label>
   <br>
   <label>
-    <input type="text" name="lastName" placeholder="Last Name">
+    <input type="text" [(ngModel)]="registerMember.lastName" name="lastName" placeholder="Last Name">
   </label>
   <br>
   <label>
-    <input type="text" name="userName" placeholder="Username">
+    <input type="text" [(ngModel)]="registerMember.userName" name="userName" placeholder="Username">
   </label>
   <br>
   <label>
-    <input type="text" name="password" placeholder="Password">
+    <input type="text" [(ngModel)]="registerMember.password" name="password" placeholder="Password">
   </label>
   <br>
   <button (click)="register()">Sign Up</button>
 </div>
 
 <h3><a [routerLink]="['/login']">Back to Login</a></h3>
+
+<!-- remove when done testing -->
+{{registerMember.firstName}}
 
 <!-- button (click)="goBack()">Back to Login</button> -->
