@@ -23,7 +23,7 @@ export class RegisterComponent implements OnInit {
       this.userService.registerUser(this.user).subscribe(() => {
         // user registered, send them to the login page
         this.router.navigate(['/login']);
-      })
+      });
     }
 
   ngOnInit() {
