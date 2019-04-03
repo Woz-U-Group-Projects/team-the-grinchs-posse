@@ -4,7 +4,8 @@ module.exports = (sequelize, DataTypes) => {
     listTitle: DataTypes.STRING
   }, {});
   giftLists.associate = function(models) {
-    // associations can be defined here
+    // giftLists belongsTo users.
+    giftLists.belongsTo (models.users, {foreignKey: 'listOwner'} );
   };
   return giftLists;
 };
