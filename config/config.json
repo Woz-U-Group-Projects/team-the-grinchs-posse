@@ -1,0 +1,20 @@
+{
+    "development": {
+        "username": "root",
+        "password": "Password!",
+        "database": "auth",
+        "host": "127.0.0.1",
+        "dialect": "mysql",
+        "define": { "timestamps": false },
+        "operatorsAliases": "Sequelize.Op",
+        "logging": true
+    },
+    "test": {
+        "dialect": "sqlite",
+        "storage": ":memory"
+    },
+    "production": {
+        "dialect": "sqlite",
+        "storage": "./database.sqlite3"
+    }
+}
