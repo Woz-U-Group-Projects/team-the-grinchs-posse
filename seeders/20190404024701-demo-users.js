@@ -10,12 +10,6 @@ module.exports = {
           password: '$@mpleP@$$wd'
         },
         {
-          firstName: 'Robert',
-          lastName: 'Hieger',
-          userName: 'rlhieger',
-          password: '$@mpleP@$$wd'
-        },
-        {
           firstName: 'Jane',
           lastName: 'Gotshalk',
           userName: 'jgotshalk',
