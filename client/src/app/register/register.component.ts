@@ -1,6 +1,8 @@
 import { Component, OnInit } from '@angular/core';
-import { Router, ActivatedRoute } from '@angular/router';
-import { Location } from '@angular/common';
+import { Router } from '@angular/router';
+
+import { User } from '../user';
+import { UserService } from '../user.service';
 
 @Component({
   selector: 'app-register',
@@ -8,21 +10,22 @@ import { Location } from '@angular/common';
   styleUrls: ['./register.component.css']
 })
 export class RegisterComponent implements OnInit {
-
-  register() {
-    
-  }
+  // initialize an empty user object
+  // we need to do this so the property binding works [(ngModel)]
+  user: User = new User();
 
   constructor(
-    private route: ActivatedRoute,
-    private location: Location
-  ) { }
+    private userService: UserService,
+    private router: Router
+    ) {}
+
+    register(): void {
+      this.userService.registerUser(this.user).subscribe(() => {
+        // user registered, send them to the login page
+        this.router.navigate(['/login']);
+      });
+    }
 
   ngOnInit() {
   }
-
-  goBack(): void {
-    this.location.back();
-  }
-
 }
