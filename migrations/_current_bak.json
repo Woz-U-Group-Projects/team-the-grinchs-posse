@@ -1,5 +1,22 @@
 {
     "tables": {
+        "giftLists": {
+            "tableName": "giftLists",
+            "schema": {
+                "listId": {
+                    "autoIncrement": true,
+                    "primaryKey": true,
+                    "field": "listId",
+                    "seqType": "Sequelize.INTEGER"
+                },
+                "listTitle": {
+                    "allowNull": false,
+                    "field": "listTitle",
+                    "seqType": "Sequelize.STRING"
+                }
+            },
+            "indexes": []
+        },
         "users": {
             "tableName": "users",
             "schema": {
@@ -33,5 +50,5 @@
             "indexes": []
         }
     },
-    "revision": 1
+    "revision": 2
 }
