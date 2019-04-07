@@ -13,6 +13,28 @@
                     "allowNull": false,
                     "field": "listTitle",
                     "seqType": "Sequelize.STRING"
+                },
+                "listOwner": {
+                    "allowNull": true,
+                    "references": {
+                        "model": "users",
+                        "key": "userId"
+                    },
+                    "onDelete": "SET NULL",
+                    "onUpdate": "CASCADE",
+                    "field": "listOwner",
+                    "seqType": "Sequelize.INTEGER"
+                },
+                "userUserId": {
+                    "allowNull": true,
+                    "references": {
+                        "model": "users",
+                        "key": "userId"
+                    },
+                    "onDelete": "SET NULL",
+                    "onUpdate": "CASCADE",
+                    "field": "userUserId",
+                    "seqType": "Sequelize.INTEGER"
                 }
             },
             "indexes": []
@@ -50,5 +72,5 @@
             "indexes": []
         }
     },
-    "revision": 2
+    "revision": 3
 }
