@@ -39,6 +39,28 @@
             },
             "indexes": []
         },
+        "gifts": {
+            "tableName": "gifts",
+            "schema": {
+                "giftId": {
+                    "autoIncrement": true,
+                    "primaryKey": true,
+                    "field": "giftId",
+                    "seqType": "Sequelize.INTEGER"
+                },
+                "giftName": {
+                    "allowNull": false,
+                    "field": "giftName",
+                    "seqType": "Sequelize.STRING"
+                },
+                "description": {
+                    "allowNull": false,
+                    "field": "description",
+                    "seqType": "Sequelize.STRING"
+                }
+            },
+            "indexes": []
+        },
         "users": {
             "tableName": "users",
             "schema": {
@@ -72,5 +94,5 @@
             "indexes": []
         }
     },
-    "revision": 3
+    "revision": 4
 }

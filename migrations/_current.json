@@ -57,6 +57,28 @@
                     "allowNull": false,
                     "field": "description",
                     "seqType": "Sequelize.STRING"
+                },
+                "giftListListId": {
+                    "allowNull": true,
+                    "references": {
+                        "model": "giftLists",
+                        "key": "listId"
+                    },
+                    "onDelete": "SET NULL",
+                    "onUpdate": "CASCADE",
+                    "field": "giftListListId",
+                    "seqType": "Sequelize.INTEGER"
+                },
+                "listId": {
+                    "allowNull": true,
+                    "references": {
+                        "model": "giftLists",
+                        "key": "listId"
+                    },
+                    "onDelete": "SET NULL",
+                    "onUpdate": "CASCADE",
+                    "field": "listId",
+                    "seqType": "Sequelize.INTEGER"
                 }
             },
             "indexes": []
@@ -94,5 +116,5 @@
             "indexes": []
         }
     },
-    "revision": 4
+    "revision": 5
 }
