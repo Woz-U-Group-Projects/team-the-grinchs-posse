@@ -18,8 +18,12 @@ module.exports = (sequelize, DataTypes) => {
     }
 
   }, {});
+  
   gifts.associate = function(models) {
-    // associations can be defined here
+
+    // gifts belongsTo giftLists.
+    gifts.belongsTo( models.giftLists, { foreignKey: 'listId' } );
+
   };
 
   return gifts;

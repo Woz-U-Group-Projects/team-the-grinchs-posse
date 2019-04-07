@@ -1,6 +1,5 @@
 'use strict';
 module.exports = (sequelize, DataTypes) => {
-  
   const giftLists = sequelize.define('giftLists', {
 
     listId: {
@@ -19,6 +18,9 @@ module.exports = (sequelize, DataTypes) => {
 
     // giftLists belongsTo users.
     giftLists.belongsTo( models.users,  { foreignKey: 'listOwner' } );
+
+    // giftLists hasMany gifts.
+    giftLists.hasMany(models.gifts);
 
   };
 
