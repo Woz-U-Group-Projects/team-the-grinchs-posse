@@ -21,24 +21,6 @@ var migrationCommands = [{
         fn: "addColumn",
         params: [
             "giftLists",
-            "userUserId",
-            {
-                "type": Sequelize.INTEGER,
-                "field": "userUserId",
-                "onUpdate": "CASCADE",
-                "onDelete": "SET NULL",
-                "references": {
-                    "model": "users",
-                    "key": "userId"
-                },
-                "allowNull": true
-            }
-        ]
-    },
-    {
-        fn: "addColumn",
-        params: [
-            "giftLists",
             "listOwner",
             {
                 "type": Sequelize.INTEGER,
