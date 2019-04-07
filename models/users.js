@@ -31,6 +31,9 @@ module.exports = (sequelize, DataTypes) => {
     // users hasMany giftLists.
     users.hasMany(models.giftLists);
 
+    // users hasMany gifts.
+    users.hasMany(models.gifts);
+
   };
   
   return users;

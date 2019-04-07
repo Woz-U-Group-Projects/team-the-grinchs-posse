@@ -17,12 +17,16 @@ module.exports = (sequelize, DataTypes) => {
       type: DataTypes.STRING
     }
 
-  }, {});
-  
+  },
+  {});
+
   gifts.associate = function(models) {
 
     // gifts belongsTo giftLists.
     gifts.belongsTo( models.giftLists, { foreignKey: 'listId' } );
+
+    // gifts belongsTo users.
+    gifts.belongsTo( models.users,  { foreignKey: 'buyerId' } );
 
   };
 
