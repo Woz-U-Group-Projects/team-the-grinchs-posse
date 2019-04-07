@@ -6,13 +6,20 @@
     "start": "node ./bin/www"
   },
   "dependencies": {
+    "bcrypt": "^3.0.5",
     "cookie-parser": "~1.4.3",
     "debug": "~2.6.9",
+<<<<<<< HEAD
     "express": "~4.16.0",
     "morgan": "~1.9.0",
     "mysql2": "^1.6.5",
     "sequelize": "^4.42.0",
     "sequelize-cli": "^5.4.0"
+=======
+    "express": "^4.16.4",
+    "jsonwebtoken": "^8.5.1",
+    "morgan": "~1.9.0"
+>>>>>>> c8bea0e8f5c09603f393aa6c590ae6bd2073b82e
   },
   "devDependencies": {
     "nodemon": "^1.18.10"

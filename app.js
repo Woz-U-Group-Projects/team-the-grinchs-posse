@@ -1,25 +1,40 @@
-var express = require('express');
-var path = require('path');
-var cookieParser = require('cookie-parser');
-var logger = require('morgan');
+var createError = require("http-errors");
+var express = require("express");
+var path = require("path");
+var cookieParser = require("cookie-parser");
+var logger = require("morgan");
+var models = require("./models");
+var cors = require("cors");
 
+<<<<<<< HEAD
 // Import models for database:
 
 var models = require('./models');
 
 var indexRouter = require('./routes/index');
 var usersRouter = require('./routes/users');
+=======
+var indexRouter = require("./routes/index");
+var userRouter = require("./routes/users");
+>>>>>>> c8bea0e8f5c09603f393aa6c590ae6bd2073b82e
 
 var app = express();
 
-app.use(logger('dev'));
+// serve the react application
+//app.use(express.static(path.join(__dirname, "client/build")));
+
+app.use(logger("dev"));
 app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
 app.use(cookieParser());
-app.use(express.static(path.join(__dirname, 'public')));
+app.use(cors({ origin: "http://localhost:4200", credentials: true }));
 
-app.use('/', indexRouter);
-app.use('/users', usersRouter);
+app.use("/", indexRouter);
+app.use("/users", userRouter);
+
+models.sequelize.sync().then(function() {
+  console.log("DB Sync'd up");
+});
 
 // Configure synchronization of database using Sequelize:
 
