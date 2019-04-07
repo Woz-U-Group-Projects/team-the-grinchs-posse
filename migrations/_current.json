@@ -79,6 +79,28 @@
                     "onUpdate": "CASCADE",
                     "field": "listId",
                     "seqType": "Sequelize.INTEGER"
+                },
+                "buyerId": {
+                    "allowNull": true,
+                    "references": {
+                        "model": "users",
+                        "key": "userId"
+                    },
+                    "onDelete": "SET NULL",
+                    "onUpdate": "CASCADE",
+                    "field": "buyerId",
+                    "seqType": "Sequelize.INTEGER"
+                },
+                "userUserId": {
+                    "allowNull": true,
+                    "references": {
+                        "model": "users",
+                        "key": "userId"
+                    },
+                    "onDelete": "SET NULL",
+                    "onUpdate": "CASCADE",
+                    "field": "userUserId",
+                    "seqType": "Sequelize.INTEGER"
                 }
             },
             "indexes": []
@@ -116,5 +138,5 @@
             "indexes": []
         }
     },
-    "revision": 5
+    "revision": 6
 }
