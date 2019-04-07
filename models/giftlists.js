@@ -1,5 +1,6 @@
 'use strict';
 module.exports = (sequelize, DataTypes) => {
+  
   const giftLists = sequelize.define('giftLists', {
 
     listId: {
@@ -15,7 +16,12 @@ module.exports = (sequelize, DataTypes) => {
   }, {});
 
   giftLists.associate = function(models) {
-    // associations can be defined here
+
+    // giftLists belongsTo users.
+    giftLists.belongsTo( models.users,  { foreignKey: 'listOwner' } );
+
   };
+
   return giftLists;
+
 };
