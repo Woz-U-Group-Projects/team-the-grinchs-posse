@@ -17,8 +17,10 @@ var info = {
 };
 
 var migrationCommands = [{
+
     fn: "createTable",
     params: [
+
         "users",
         {
             "userId": {
@@ -50,6 +52,7 @@ var migrationCommands = [{
         },
         {}
     ]
+    
 }];
 
 module.exports = {
