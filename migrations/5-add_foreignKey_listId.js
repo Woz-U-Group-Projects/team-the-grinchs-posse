@@ -18,6 +18,7 @@ var info = {
 };
 
 var migrationCommands = [{
+    
         fn: "addColumn",
         params: [
             "gifts",
@@ -35,24 +36,7 @@ var migrationCommands = [{
             }
         ]
     },
-    {
-        fn: "addColumn",
-        params: [
-            "gifts",
-            "giftListListId",
-            {
-                "type": Sequelize.INTEGER,
-                "field": "giftListListId",
-                "onUpdate": "CASCADE",
-                "onDelete": "SET NULL",
-                "references": {
-                    "model": "giftLists",
-                    "key": "listId"
-                },
-                "allowNull": true
-            }
-        ]
-    }
+    
 ];
 
 module.exports = {
