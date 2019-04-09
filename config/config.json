@@ -1,48 +1,26 @@
-{
-<<<<<<< HEAD
-  "development": {
-    "username": "root",
-    "password": "P@$$wd!",
-    "database": "giftWishes",
-    "host": "127.0.0.1",
-    "dialect": "mysql",
-    "define": { "timestamps": false }
-  },
-  "test": {
-    "username": "root",
-    "password": "P@$$wd!",
-    "database": "giftWishes",
-    "host": "127.0.0.1",
-    "dialect": "mysql",
-    "define": { "timestamps": false }
-  },
-  "production": {
-    "username": "root",
-    "password": "P@$$wd!",
-    "database": "giftWishes",
-    "host": "127.0.0.1",
-    "dialect": "mysql",
-    "define": { "timestamps":  false }
-  }
-}
-=======
-    "development": {
+    {
+      "development": {
         "username": "root",
-        "password": "Password!",
+        "password": "Password1!",
         "database": "auth",
         "host": "127.0.0.1",
         "dialect": "mysql",
-        "define": { "timestamps": false },
-        "operatorsAliases": "Sequelize.Op",
-        "logging": true
-    },
-    "test": {
-        "dialect": "sqlite",
-        "storage": ":memory"
-    },
-    "production": {
-        "dialect": "sqlite",
-        "storage": "./database.sqlite3"
+        "define": {
+          "timestamps": false
+        }
+      },
+      "test": {
+        "username": "root",
+        "password": null,
+        "database": "database_test",
+        "host": "127.0.0.1",
+        "dialect": "mysql"
+      },
+      "production": {
+        "username": "root",
+        "password": null,
+        "database": "database_production",
+        "host": "127.0.0.1",
+        "dialect": "mysql"
+      }
     }
-}
->>>>>>> c8bea0e8f5c09603f393aa6c590ae6bd2073b82e
