@@ -1,4 +1,4 @@
-var express = require('express');
+var express = require("express");
 var router = express.Router();
 var users = require('../models/member');
 
@@ -8,7 +8,7 @@ var users = require('../models/member');
           memberId: member.memberd,
           Name: member.Name
         }));
-        res.send(JSON.stringify(mappedArtists));
+        res.send(JSON.stringify(mappedMember));
       });
     });
   
@@ -27,6 +27,15 @@ router.post('/member', (req, res) => {
         res.send('This member already exists!');
       }
     });
-});
+  });
+
+// Specify database engine technology:
+
+// const mysql = require('mysql').verbose();
+
+// /* GET home page. */
+// router.get("/", function(req, res, next) {
+//   res.send("hello!");
+// });
 
 module.exports = router;

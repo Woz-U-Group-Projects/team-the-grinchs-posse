@@ -1,0 +1,120 @@
+{
+    "tables": {
+        "giftLists": {
+            "tableName": "giftLists",
+            "schema": {
+                "listId": {
+                    "autoIncrement": true,
+                    "primaryKey": true,
+                    "field": "listId",
+                    "seqType": "Sequelize.INTEGER"
+                },
+                "listTitle": {
+                    "allowNull": false,
+                    "field": "listTitle",
+                    "seqType": "Sequelize.STRING"
+                },
+                "listOwner": {
+                    "allowNull": true,
+                    "references": {
+                        "model": "users",
+                        "key": "userId"
+                    },
+                    "onDelete": "SET NULL",
+                    "onUpdate": "CASCADE",
+                    "field": "listOwner",
+                    "seqType": "Sequelize.INTEGER"
+                },
+                "userUserId": {
+                    "allowNull": true,
+                    "references": {
+                        "model": "users",
+                        "key": "userId"
+                    },
+                    "onDelete": "SET NULL",
+                    "onUpdate": "CASCADE",
+                    "field": "userUserId",
+                    "seqType": "Sequelize.INTEGER"
+                }
+            },
+            "indexes": []
+        },
+        "gifts": {
+            "tableName": "gifts",
+            "schema": {
+                "giftId": {
+                    "autoIncrement": true,
+                    "primaryKey": true,
+                    "field": "giftId",
+                    "seqType": "Sequelize.INTEGER"
+                },
+                "giftName": {
+                    "allowNull": false,
+                    "field": "giftName",
+                    "seqType": "Sequelize.STRING"
+                },
+                "description": {
+                    "allowNull": false,
+                    "field": "description",
+                    "seqType": "Sequelize.STRING"
+                },
+                "giftListListId": {
+                    "allowNull": true,
+                    "references": {
+                        "model": "giftLists",
+                        "key": "listId"
+                    },
+                    "onDelete": "SET NULL",
+                    "onUpdate": "CASCADE",
+                    "field": "giftListListId",
+                    "seqType": "Sequelize.INTEGER"
+                },
+                "listId": {
+                    "allowNull": true,
+                    "references": {
+                        "model": "giftLists",
+                        "key": "listId"
+                    },
+                    "onDelete": "SET NULL",
+                    "onUpdate": "CASCADE",
+                    "field": "listId",
+                    "seqType": "Sequelize.INTEGER"
+                }
+            },
+            "indexes": []
+        },
+        "users": {
+            "tableName": "users",
+            "schema": {
+                "userId": {
+                    "autoIncrement": true,
+                    "primaryKey": true,
+                    "field": "userId",
+                    "seqType": "Sequelize.INTEGER"
+                },
+                "firstName": {
+                    "allowNull": false,
+                    "field": "firstName",
+                    "seqType": "Sequelize.STRING"
+                },
+                "lastName": {
+                    "allowNull": false,
+                    "field": "lastName",
+                    "seqType": "Sequelize.STRING"
+                },
+                "userName": {
+                    "allowNull": false,
+                    "field": "userName",
+                    "seqType": "Sequelize.STRING"
+                },
+                "password": {
+                    "allowNull": false,
+                    "field": "password",
+                    "seqType": "Sequelize.STRING"
+                }
+            },
+            "indexes": []
+        }
+    },
+    "revision": 5
+}
