@@ -6,8 +6,17 @@ var logger = require("morgan");
 var models = require("./models");
 var cors = require("cors");
 
+<<<<<<< HEAD
+// Import models for database:
+
+var models = require('./models');
+
+var indexRouter = require('./routes/index');
+var usersRouter = require('./routes/users');
+=======
 var indexRouter = require("./routes/index");
 var userRouter = require("./routes/users");
+>>>>>>> c8bea0e8f5c09603f393aa6c590ae6bd2073b82e
 
 var app = express();
 
@@ -26,5 +35,13 @@ app.use("/users", userRouter);
 models.sequelize.sync().then(function() {
   console.log("DB Sync'd up");
 });
+
+// Configure synchronization of database using Sequelize:
+
+models.sequelize.sync().then( function()  {
+
+    console.log('DB Synced up.');
+
+}); // end models.sequelize.sync().then()
 
 module.exports = app;
