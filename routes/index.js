@@ -1,41 +1,19 @@
-var express = require("express");
+var express = require('express');
+
 var router = express.Router();
-var users = require('../models/member');
+//var users = require('../models/users');
+//var userRouter = require("./routes/users");
 
- router.get('/member', function(req, res, next) {
-      models.member.findAll({}).then(memberAsPlainObject => {
-        const mappedMember = memberAsPlainObject.map(member => ({
-          memberId: member.memberd,
-          Name: member.Name
-        }));
-        res.send(JSON.stringify(mappedMember));
-      });
-    });
-  
-router.post('/member', (req, res) => {
-  models.member
-    .findOrCreate({
-      where: {
-        Name: req.body.name,
-        DateFormed: req.body.dateFormed
-      }
-    })
-    .spread(function(result, created) {
-      if (created) {
-        res.redirect('/member');
-      } else {
-        res.send('This member already exists!');
-      }
-    });
-  });
 
-// Specify database engine technology:
 
-// const mysql = require('mysql').verbose();
+/* GET home page. */
 
-// /* GET home page. */
-// router.get("/", function(req, res, next) {
-//   res.send("hello!");
-// });
+router.get('/', function (req, res, next) {
 
-module.exports = router;
+  res.render('home')
+
+});
+
+
+
+module.exports = router

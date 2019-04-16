@@ -37,15 +37,15 @@ models.sequelize.sync().then(function() {
 
 // Configure synchronization of database using Sequelize:
 
-models.sequelize.sync().then( function()  {
+// models.sequelize.sync().then( function()  {
 
-    console.log('DB Synced up.');
+//     console.log('DB Synced up.');
 
-}); // end models.sequelize.sync().then()
+// }); // end models.sequelize.sync().then()
 
-models.sequelize.sync().then(function() {
-    console.log("DB Sync'd up")
-  });
+// models.sequelize.sync().then(function() {
+//     console.log("DB Sync'd up")
+//   });
   
 
 module.exports = app;
